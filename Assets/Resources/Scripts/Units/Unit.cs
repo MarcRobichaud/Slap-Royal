@@ -11,9 +11,16 @@ public class Unit : MonoBehaviour, IAttacker, IHitable
         moveable = GetComponent<Moveable>();
     }
 
+    private void SetDestinationToTower()
+    {
+    }
+
     private void Start()
     {
         fsm = new StateMachine();
+
+        fsm.AddState("MoveToTower",
+            onEnter: (state) => SetDestinationToTower());
     }
 
     public void OnHit(int damage)

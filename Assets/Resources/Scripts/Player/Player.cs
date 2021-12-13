@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private HashSet<Unit> Mobs;
-    private HashSet<Unit> Towers;
+    public HashSet<Unit> Mobs;
+    public HashSet<Tower> Towers;
+
+    private void Start()
+    {
+        Towers = new HashSet<Tower>(GetComponentsInChildren<Tower>());
+        Mobs = new HashSet<Unit>(GetComponentsInChildren<Unit>());
+    }
 }

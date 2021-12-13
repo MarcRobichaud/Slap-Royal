@@ -14,11 +14,6 @@ public class Unit : MonoBehaviour, IAttacker, IHitable
     private void Start()
     {
         fsm = new StateMachine();
-
-        fsm.AddState("MoveToTower",
-            onEnter:
-
-            )
     }
 
     public void OnHit(int damage)
